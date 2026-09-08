@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #1E4638;
+  /* Shared card elevation for white surfaces */
+  --shadow-card: 0 4px 6px -1px rgba(20, 53, 42, 0.06),
+    0 12px 32px -8px rgba(20, 53, 42, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: #F7EAE3;
+  --color-green: #1E4638;
+  --color-terracotta: #C0602E;
+  --color-gold: #C9A972;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-heading), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* Justified body copy site-wide. Lives in the base layer so Tailwind
+   alignment utilities (text-center, text-left) still win where needed. */
+@layer base {
+  p,
+  blockquote,
+  li,
+  dd,
+  td {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  /* Hyphenation keeps justified prose from opening large word gaps */
+  p,
+  blockquote {
+    hyphens: auto;
+  }
+}
+
+/* Comfortable tap targets on touch devices */
+@media (pointer: coarse) {
+  a,
+  button {
+    touch-action: manipulation;
+  }
+}
+
