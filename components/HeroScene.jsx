@@ -382,55 +382,6 @@ export default function HeroScene() {
 
               {/* Right — masked photo with design overlays */}
               <div className="relative z-10 order-1 mx-auto w-full max-w-xl lg:order-2 lg:max-w-none">
-                <div
-                  className="pointer-events-none absolute top-6 -left-6 hidden h-[86%] w-[42%] sm:-left-10 sm:block"
-                  aria-hidden
-                >
-                  <Image
-                    src="/hero-landing/pale-hero-arch.png"
-                    alt=""
-                    fill
-                    className="object-contain object-left"
-                    sizes="30vw"
-                  />
-                </div>
-                <div
-                  className="pointer-events-none absolute top-[6%] -left-1 hidden h-[58%] w-16 sm:block sm:w-24"
-                  aria-hidden
-                >
-                  <Image
-                    src="/hero-landing/botanical-line-leaf.png"
-                    alt=""
-                    fill
-                    className="object-contain object-left"
-                    sizes="6rem"
-                  />
-                </div>
-                <div
-                  className="pointer-events-none absolute top-[8%] left-[8%] hidden h-24 w-16 sm:block sm:h-32 sm:w-20"
-                  aria-hidden
-                >
-                  <Image
-                    src="/hero-landing/leaf-cluster.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                    sizes="5rem"
-                  />
-                </div>
-                <div
-                  className="pointer-events-none absolute top-[28%] -left-2 hidden h-10 w-16 sm:block sm:h-12 sm:w-20"
-                  aria-hidden
-                >
-                  <Image
-                    src="/hero-landing/edge-leaf.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                    sizes="5rem"
-                  />
-                </div>
-
                 <div className="hero-photo-mask relative aspect-[5/4] w-full overflow-hidden sm:aspect-[4/3] lg:aspect-[5/4]">
                   <Image
                     src="/hero-therapy.jpg"
