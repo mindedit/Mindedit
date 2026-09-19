@@ -1,7 +1,8 @@
 import Link from "next/link";
 import TherapistCard from "@/components/TherapistCard";
 
-export default function Team() {
+/** `showHeading` is off on pages that already carry the "Our Team" title. */
+export default function Team({ showHeading = true }: { showHeading?: boolean }) {
   return (
     <section
       id="team"
@@ -18,18 +19,20 @@ export default function Team() {
 
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-xl">
-            <h2 className="font-serif text-3xl font-bold text-[#1E4638] sm:text-4xl">
-              Our Team
-            </h2>
-            <p className="mt-3 text-sm text-[#6B6B6B] sm:text-base">
-              Compassionate clinicians dedicated to evidence-based care for
-              every mind, every age.
-            </p>
-          </div>
+          {showHeading ? (
+            <div className="max-w-xl">
+              <h2 className="font-serif text-3xl font-bold text-[#1E4638] sm:text-4xl">
+                Our Team
+              </h2>
+              <p className="mt-3 text-sm text-[#6B6B6B] sm:text-base">
+                Compassionate clinicians dedicated to evidence-based care for
+                every mind, every age.
+              </p>
+            </div>
+          ) : null}
           <Link
             href="/contact"
-            className="shrink-0 text-sm font-semibold text-[#1E4638] transition-colors hover:text-[#A66B4A]"
+            className="shrink-0 text-sm font-semibold text-[#1E4638] transition-colors hover:text-[#A66B4A] sm:ml-auto"
           >
             Book a Consultation →
           </Link>

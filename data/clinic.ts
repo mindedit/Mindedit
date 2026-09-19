@@ -39,26 +39,49 @@ export const whoWeServe = [
   },
 ];
 
-export const founder = {
-  name: "Fia F. Shaji",
-  title: "Consultant Psychologist | Founder, MINDEDIT",
-  qualifications: [
-    "MSc Clinical Psychology, St. Teresa's College, Ernakulam",
-    "BSc Psychology, Kristu Jyothi College, Changanassery",
-    "1.5+ years professional experience across children, adolescents, adults, couples, and families",
-    "Trained at Pushpagiri Medical College — clinical, educational, and community settings",
-    'Associated with KEEKU Mental Health Campaign (Hibi Eden MP) and "Mayangilla Keral" drug awareness initiative (Excise Minister M. Liju)',
-    "Conducts workshops and awareness programs in schools, colleges, and the community",
-  ],
+export type FounderProfile = {
+  name: string;
+  title: string;
+  photoSrc: string;
+  qualifications?: string[];
 };
+
+export const founders: FounderProfile[] = [
+  {
+    name: "Fia F. Shaji",
+    title: "Consultant Psychologist | Founder, MINDEDIT",
+    photoSrc: "/founder.jpg",
+    qualifications: [
+      "MSc Clinical Psychology, St. Teresa's College, Ernakulam",
+      "BSc Psychology, Kristu Jyothi College, Changanassery",
+      "1.5+ years professional experience across children, adolescents, adults, couples, and families",
+      "Trained at Pushpagiri Medical College — clinical, educational, and community settings",
+      'Associated with Keeku Mental Health Campaign (Hibi Eden MP) and "Mayangilla Keralam" drug awareness initiative (Excise Minister M. Liju)',
+      "Conducts workshops and awareness programs in schools, colleges, and the community",
+    ],
+  },
+  {
+    name: "Sherook Shemsu",
+    title: "Founder | Entrepreneur | MBA",
+    photoSrc: "/founder-sherook.jpg",
+  },
+  {
+    name: "Abiyas Aksha",
+    title: "Founder | Entrepreneur | Engineer",
+    photoSrc: "/founder-abiyas.jpg",
+  },
+];
+
+export const founder = founders[0];
+export const otherFounders = founders.slice(1);
 
 export const outreach = [
   {
-    title: "KEEKU Mental Health Campaign",
+    title: "Keeku Mental Health Campaign",
     body: "Associated with the campaign led by Hibi Eden MP, bringing mental health awareness to a wider public.",
   },
   {
-    title: "“Mayangilla Keral” Drug Awareness",
+    title: "“Mayangilla Keralam,” Drug Awareness",
     body: "Part of the drug awareness initiative with Excise Minister M. Liju, supporting prevention and early help.",
   },
   {

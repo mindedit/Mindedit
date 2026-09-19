@@ -1,22 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #1E4638;
+  --background: #ffffff;
+  --foreground: #1e4638;
   /* Shared card elevation for white surfaces */
-  --shadow-card: 0 4px 6px -1px rgba(20, 53, 42, 0.06),
+  --shadow-card:
+    0 4px 6px -1px rgba(20, 53, 42, 0.06),
     0 12px 32px -8px rgba(20, 53, 42, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-cream: #F7EAE3;
-  --color-green: #1E4638;
-  --color-terracotta: #C0602E;
-  --color-gold: #C9A972;
+  --color-cream: #f7eae3;
+  --color-green: #1e4638;
+  --color-terracotta: #c0602e;
+  --color-gold: #c9a972;
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-heading), ui-serif, Georgia, serif;
+  --font-hand: var(--font-script), ui-serif, cursive;
+}
+
+.hero-photo-mask {
+  -webkit-mask-image: url("/hero-landing/photo-mask.png");
+  mask-image: url("/hero-landing/photo-mask.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 html {
@@ -62,4 +75,3 @@ canvas {
     touch-action: manipulation;
   }
 }
-

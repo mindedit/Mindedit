@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
-  { href: "/psychologists", label: "Our Psychologists" },
+  { href: "/psychologists", label: "Our Team" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -29,13 +29,14 @@ export default function Navbar() {
             alt="MINDEDIT"
             width={443}
             height={531}
-            className="h-14 w-auto sm:h-16"
+            className="h-12 w-auto sm:h-16"
             style={{ width: "auto" }}
             priority
           />
           <span className="hidden text-[11px] font-medium leading-tight text-[#1A3026]/55 sm:block">
-            Child Development
+            Child Development Centre /
             <br />
+            Mental Health 
             Centre
           </span>
         </Link>

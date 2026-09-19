@@ -7,12 +7,12 @@ import {
   Calendar,
   Users,
   ShieldCheck,
-  Lock,
   Brain,
   Video,
   Heart,
-  MapPin,
-  Award,
+  ArrowRight,
+  Leaf,
+  Monitor,
 } from "lucide-react";
 import HeroFrameScroll from "@/components/HeroFrameScroll";
 
@@ -20,17 +20,55 @@ const WHATSAPP_URL =
   "https://wa.me/918139831157?text=Hi%20MINDEDIT%2C%20I%27d%20like%20to%20book%20a%20consultation.";
 
 const floatingLabels = [
-  { icon: ShieldCheck, label: "Confidential Care" },
-  { icon: Lock, label: "Evidence-Based Practice" },
-  { icon: Brain, label: "Every Age, Every Mind" },
-  { icon: Video, label: "Online & In-Person" },
+  {
+    icon: Brain,
+    label: "Mental Health Support",
+    tone: "bg-[#EAF3EC] text-[#1E4638]",
+  },
+  {
+    icon: Users,
+    label: "Evidence-Based Practice",
+    tone: "bg-[#F6EDE4] text-[#A66B4A]",
+  },
+  {
+    icon: Leaf,
+    label: "For Every Age, Every Mind",
+    tone: "bg-[#EEF5E8] text-[#3F6B4F]",
+  },
+  {
+    icon: Monitor,
+    label: "Online & In-Person Care",
+    tone: "bg-[#EAF2F8] text-[#3A6A8A]",
+  },
 ];
 
 const stats = [
-  { icon: Award, value: "Since June 2025", caption: "Consultations" },
-  { icon: Users, value: "Children to Families", caption: "Supported" },
-  { icon: Heart, value: "Evidence-Based", caption: "Care" },
-  { icon: MapPin, value: "Online & In-Clinic", caption: "Sessions" },
+  {
+    icon: Users,
+    value: "Children to Families",
+    caption: "Supporting Growth",
+  },
+  {
+    icon: Heart,
+    value: "Evidence-Based Care",
+    caption: "Trusted Approaches",
+  },
+  {
+    icon: Video,
+    value: "Online & In-Clinic",
+    caption: "Flexible Sessions",
+  },
+  {
+    icon: Calendar,
+    value: "Since June 2025",
+    caption: "Building Brighter Futures",
+  },
+];
+
+const trustMarks = [
+  { icon: Users, title: "Lives Touched", caption: "Every age, every mind" },
+  { icon: Heart, title: "Holistic Care", caption: "For all ages" },
+  { icon: ShieldCheck, title: "Compassionate", caption: "Evidence-based" },
 ];
 
 function easeInOutCubic(t) {
@@ -258,114 +296,216 @@ export default function HeroScene() {
             willChange: "opacity, transform",
           }}
         >
-          <div className="relative mx-auto grid min-h-full max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-12">
-            {/* Soft leaf decorations */}
-            <div
-              className="pointer-events-none absolute -left-16 top-10 h-64 w-64 rounded-full bg-[#1E4638]/5 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-10 right-0 h-72 w-72 rounded-full bg-[#C0602E]/10 blur-3xl"
-              aria-hidden
-            />
+          <div className="relative mx-auto flex min-h-full max-w-[88rem] flex-col justify-center overflow-x-hidden px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-6 xl:gap-10">
+              {/* Left copy */}
+              <div className="relative z-10 order-2 lg:order-1">
+                <p className="flex flex-wrap items-center gap-3 text-[10px] font-semibold tracking-[0.18em] text-[#A66B4A] uppercase sm:text-[11px] sm:tracking-[0.22em]">
+                  Child Development & Mental Health Centre
+                  <span
+                    className="inline-block h-px w-10 bg-[#A66B4A]/70"
+                    aria-hidden
+                  />
+                </p>
 
-            {/* Left copy */}
-            <div className="relative z-10 order-2 lg:order-1">
-              <p className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-[#A66B4A] uppercase sm:text-xs">
-                <span
-                  className="inline-block h-px w-5 bg-[#A66B4A]"
-                  aria-hidden
-                />
-                Compassionate. Professional. Confidential.
-              </p>
+                <h1 className="mt-3 max-w-xl font-serif text-[1.85rem] font-bold leading-[1.1] text-[#1E4638] sm:text-[3.1rem] lg:text-[3.45rem]">
+                  Rewriting Every Mind,{" "}
+                  <span className="text-[#C0602E]">Every Age</span>
+                </h1>
 
-              <h1 className="mt-4 max-w-xl font-serif text-[2.35rem] font-bold leading-[1.12] text-[#1E4638] sm:text-5xl lg:text-[3.25rem]">
-                Rewriting Every Mind,{" "}
-                <span className="text-[#A66B4A]">Every Age</span>
-              </h1>
+                <p className="mt-4 max-w-lg text-left text-[14px] leading-relaxed text-[#4A4A4A] sm:text-[15.5px] sm:leading-7">
+                  MINDEDIT is a centre for mental health and child development,
+                  dedicated to supporting individuals across all stages of life
+                  through compassionate, evidence-based care.
+                </p>
 
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#4A4A4A] sm:text-base">
-                MINDEDIT is a centre for mental health and child development,
-                dedicated to supporting individuals across all stages of life
-                through compassionate, evidence-based care.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#1E4638] px-5 text-[14px] font-medium text-white transition-colors hover:bg-[#16352b]"
-                >
-                  <Calendar size={17} aria-hidden />
-                  Book a Consultation
-                </a>
-                <Link
-                  href="/psychologists"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-[#A66B4A] px-5 text-[14px] font-medium text-[#A66B4A] transition-colors hover:bg-[#A66B4A] hover:text-white"
-                >
-                  <Users size={17} aria-hidden />
-                  Meet Our Specialists
-                </Link>
-              </div>
-
-              {/* Stats */}
-              <ul className="mt-10 grid max-w-lg grid-cols-2 gap-3 sm:gap-4">
-                {stats.map(({ icon: Icon, value, caption }) => (
-                  <li
-                    key={value}
-                    className="group flex items-center gap-3 rounded-2xl border border-[#1E4638]/[0.07] bg-white p-3 text-left shadow-[0_1px_2px_rgba(20,53,42,0.04),0_10px_30px_-12px_rgba(20,53,42,0.18)] transition duration-300 hover:-translate-y-0.5 hover:border-[#A66B4A]/30 hover:shadow-[0_2px_4px_rgba(20,53,42,0.05),0_18px_40px_-14px_rgba(20,53,42,0.26)] sm:p-3.5"
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#1E4638] px-5 text-[14px] font-medium text-white transition-colors hover:bg-[#16352b] sm:w-auto"
                   >
-                    <span
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F1F5F2] text-[#1E4638] transition-colors duration-300 group-hover:bg-[#1E4638] group-hover:text-white sm:h-10 sm:w-10"
-                      aria-hidden
+                    <Calendar size={16} aria-hidden />
+                    Book a Consultation
+                    <ArrowRight size={15} aria-hidden />
+                  </a>
+                  <Link
+                    href="/psychologists"
+                    className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[#C0602E] px-5 text-[14px] font-medium text-[#C0602E] transition-colors hover:bg-[#C0602E] hover:text-white sm:w-auto"
+                  >
+                    <Users size={16} aria-hidden />
+                    Meet Our Specialists
+                  </Link>
+                </div>
+
+                <ul className="mt-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
+                  {stats.map(({ icon: Icon, value, caption }) => (
+                    <li
+                      key={value}
+                      className="rounded-2xl border border-[#1E4638]/[0.06] bg-white px-3 py-3.5 text-center shadow-[0_8px_24px_-12px_rgba(20,53,42,0.18)]"
                     >
-                      <Icon size={17} strokeWidth={1.75} />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-[12.5px] leading-tight font-semibold text-[#1E4638] sm:text-[13.5px]">
+                      <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-[#EAF3EC] text-[#1E4638]">
+                        <Icon size={16} strokeWidth={1.75} aria-hidden />
+                      </span>
+                      <span className="mt-2.5 block text-[12px] leading-tight font-semibold text-[#1E4638] sm:text-[13px]">
                         {value}
                       </span>
-                      <span className="mt-1 block text-[9.5px] font-medium tracking-[0.16em] text-[#8A9A92] uppercase sm:text-[10px]">
+                      <span className="mt-1 block text-[9px] font-semibold tracking-[0.12em] text-[#8A9A92] uppercase">
                         {caption}
                       </span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    </li>
+                  ))}
+                </ul>
 
-            {/* Right — therapy session photo */}
-            <div className="relative z-10 order-1 mx-auto w-full max-w-lg lg:order-2 lg:max-w-none">
-              <div className="relative overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(26,48,38,0.12)]">
-                <div className="relative aspect-[4/3] w-full">
+                <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  {trustMarks.map(({ icon: Icon, title, caption }) => (
+                    <li
+                      key={title}
+                      className="flex items-center gap-2.5 text-left"
+                    >
+                      <span className="flex h-8 w-8 items-center justify-center text-[#1E4638]">
+                        <Icon size={18} strokeWidth={1.7} aria-hidden />
+                      </span>
+                      <span>
+                        <span className="block text-[13px] font-semibold text-[#1E4638]">
+                          {title}
+                        </span>
+                        <span className="block text-[11px] text-[#7A8A83]">
+                          {caption}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right — masked photo with design overlays */}
+              <div className="relative z-10 order-1 mx-auto w-full max-w-xl lg:order-2 lg:max-w-none">
+                <div
+                  className="pointer-events-none absolute top-6 -left-6 hidden h-[86%] w-[42%] sm:-left-10 sm:block"
+                  aria-hidden
+                >
+                  <Image
+                    src="/hero-landing/pale-hero-arch.png"
+                    alt=""
+                    fill
+                    className="object-contain object-left"
+                    sizes="30vw"
+                  />
+                </div>
+                <div
+                  className="pointer-events-none absolute top-[6%] -left-1 hidden h-[58%] w-16 sm:block sm:w-24"
+                  aria-hidden
+                >
+                  <Image
+                    src="/hero-landing/botanical-line-leaf.png"
+                    alt=""
+                    fill
+                    className="object-contain object-left"
+                    sizes="6rem"
+                  />
+                </div>
+                <div
+                  className="pointer-events-none absolute top-[8%] left-[8%] hidden h-24 w-16 sm:block sm:h-32 sm:w-20"
+                  aria-hidden
+                >
+                  <Image
+                    src="/hero-landing/leaf-cluster.png"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    sizes="5rem"
+                  />
+                </div>
+                <div
+                  className="pointer-events-none absolute top-[28%] -left-2 hidden h-10 w-16 sm:block sm:h-12 sm:w-20"
+                  aria-hidden
+                >
+                  <Image
+                    src="/hero-landing/edge-leaf.png"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    sizes="5rem"
+                  />
+                </div>
+
+                <div className="hero-photo-mask relative aspect-[5/4] w-full overflow-hidden sm:aspect-[4/3] lg:aspect-[5/4]">
                   <Image
                     src="/hero-therapy.jpg"
                     alt="A therapist in conversation with a client in a calm, plant-filled MINDEDIT consultation room"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 52vw"
+                    className="object-cover object-[62%_center]"
                     priority
                   />
                 </div>
-              </div>
 
-              {/* Floating labels */}
-              <ul className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2.5">
-                {floatingLabels.map(({ icon: Icon, label }) => (
-                  <li
-                    key={label}
-                    className="flex w-[9.25rem] items-center gap-2.5 rounded-xl bg-white/70 px-2.5 py-2 text-left shadow-[0_10px_28px_-8px_rgba(26,48,38,0.35)] backdrop-blur-sm sm:w-[10.25rem] sm:px-3 sm:py-2.5"
-                  >
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#F1F1EC] text-[#1E4638] sm:h-8 sm:w-8">
-                      <Icon size={15} strokeWidth={1.75} aria-hidden />
+                <p className="pointer-events-none absolute top-[16%] left-[34%] z-20 hidden max-w-[9.5rem] -rotate-6 font-hand text-[1.35rem] leading-[1.05] font-semibold text-[#1E4638] sm:left-[38%] sm:block sm:text-[1.7rem] lg:text-[1.85rem]">
+                  A Kinder
+                  <br />
+                  Brighter Tomorrow
+                </p>
+
+                <ul className="absolute top-[14%] right-2 z-20 hidden w-[10.5rem] flex-col gap-2 sm:right-5 sm:flex sm:w-[11.75rem]">
+                  {floatingLabels.map(({ icon: Icon, label, tone }) => (
+                    <li
+                      key={label}
+                      className={`flex items-center gap-2.5 rounded-2xl px-2.5 py-2 text-left shadow-[0_8px_20px_-10px_rgba(26,48,38,0.28)] ${tone}`}
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/70">
+                        <Icon size={14} strokeWidth={1.8} aria-hidden />
+                      </span>
+                      <span className="text-[11px] leading-tight font-semibold sm:text-[12px]">
+                        {label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <figure className="absolute bottom-3 left-2 z-20 flex max-w-[min(16.5rem,calc(100%-1rem))] items-center gap-3 rounded-[1.4rem] bg-[#FBF6EE]/95 px-3 py-2.5 shadow-[0_12px_30px_-14px_rgba(26,48,38,0.35)] sm:bottom-8 sm:left-6 sm:max-w-[18.5rem] sm:px-5 sm:py-3.5">
+                  <blockquote className="text-left text-[12px] leading-snug text-[#3D4A44] sm:text-[13px]">
+                    <span className="mr-1 font-serif text-lg leading-none text-[#A66B4A]">
+                      “
                     </span>
-                    <span className="text-[10px] font-semibold leading-[1.3] text-[#2C3B34] sm:text-[11px]">
-                      {label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                    Every story matters. We’re here to listen, support and help
+                    you grow.
+                    <footer className="mt-1.5 text-[10px] font-semibold tracking-[0.16em] text-[#8A9A92] uppercase">
+                      — MINDEDIT
+                    </footer>
+                  </blockquote>
+                  <span className="relative hidden h-12 w-10 shrink-0 sm:block">
+                    <Image
+                      src="/hero-landing/quote-leaf.png"
+                      alt=""
+                      fill
+                      className="object-contain"
+                      sizes="2.5rem"
+                    />
+                  </span>
+                </figure>
+
+                <div
+                  className="pointer-events-none absolute right-0 bottom-0 z-20 h-28 w-36 sm:h-36 sm:w-44"
+                  aria-hidden
+                >
+                  <Image
+                    src="/hero-landing/corner-green-blob.png"
+                    alt=""
+                    fill
+                    className="object-contain object-right-bottom"
+                    sizes="11rem"
+                  />
+                  <p className="absolute right-3 bottom-3 text-right font-hand text-[0.95rem] leading-[1.05] font-semibold text-white sm:right-4 sm:bottom-4 sm:text-[1.15rem]">
+                    People
+                    <br />
+                    Progress
+                    <br />
+                    Possibilities
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

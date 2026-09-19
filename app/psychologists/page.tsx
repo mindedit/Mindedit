@@ -9,7 +9,7 @@ const WHATSAPP_URL =
   "https://wa.me/918139831157?text=Hi%20MINDEDIT%2C%20I%27d%20like%20to%20book%20a%20consultation.";
 
 export const metadata: Metadata = {
-  title: "Our Psychologists – MINDEDIT | Kollam",
+  title: "Our Team – MINDEDIT | Kollam",
   description:
     "Meet the team at MINDEDIT, Kollam. Consultant psychologist Fia F. Shaji and a growing multidisciplinary team providing evidence-based care for children, adolescents, adults, couples, and families.",
 };
@@ -50,11 +50,11 @@ export default function PsychologistsPage() {
               Home
             </Link>
             <span aria-hidden>/</span>
-            <span className="font-medium text-[#1E4638]">Our Psychologists</span>
+            <span className="font-medium text-[#1E4638]">Our Team</span>
           </nav>
 
           <h1 className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-tight text-[#1E4638] sm:text-5xl">
-            Our Psychologists
+            Our Team
           </h1>
           <div
             className="mt-5 h-px w-16 bg-gradient-to-r from-[#C9A972] to-transparent"
@@ -68,7 +68,7 @@ export default function PsychologistsPage() {
         </div>
       </section>
 
-      <Team />
+      <Team showHeading={false} />
 
       <Founder />
 

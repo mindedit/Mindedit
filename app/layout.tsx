@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Caveat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -13,6 +13,12 @@ const heading = Playfair_Display({
 const body = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+});
+
+const script = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-script",
 });
 
 const siteDescription =
@@ -56,7 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${heading.variable} ${body.variable} ${script.variable} h-full`}
+    >
       <body className="flex min-h-full flex-col overflow-x-hidden bg-white font-sans text-[#1A3026] antialiased">
         <Navbar />
         <main className="w-full flex-1">{children}</main>
