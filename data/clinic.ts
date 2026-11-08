@@ -50,7 +50,7 @@ export const founders: FounderProfile[] = [
   {
     name: "Fia F. Shaji",
     title: "Consultant Psychologist | Founder, MINDEDIT",
-    photoSrc: "/founder.jpg",
+    photoSrc: "/Fia.png",
     qualifications: [
       "MSc Clinical Psychology, St. Teresa's College, Ernakulam",
       "BSc Psychology, Kristu Jyothi College, Changanassery",
@@ -63,12 +63,12 @@ export const founders: FounderProfile[] = [
   {
     name: "Sherook Shemsu",
     title: "Founder | Entrepreneur | MBA",
-    photoSrc: "/founder-sherook.jpg",
+    photoSrc: "/sherrok.jpeg",
   },
   {
     name: "Abiyas Aksha",
     title: "Founder | Entrepreneur | Engineer",
-    photoSrc: "/founder-abiyas.jpg",
+    photoSrc: "/abhiyas.png",
   },
 ];
 

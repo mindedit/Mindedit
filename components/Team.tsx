@@ -52,7 +52,7 @@ export default function Team({ showHeading = true }: { showHeading?: boolean }) 
               "Couples",
               "Families",
             ]}
-            photoSrc="/founder.jpg"
+            photoSrc="/Fia.png"
             photoAlt="Fia F. Shaji, Founder of MINDEDIT"
           />
           <TherapistCard
